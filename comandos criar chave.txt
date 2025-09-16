@@ -1,0 +1,14 @@
+dentro da pasta resources:
+
+ gera chave 
+ openssl genrsa > aux.key
+
+ converte chave para formato pkcs#8
+ openssl pkcs8 -topk8 -inform pem -in aux.key -outform pem -nocrypt -out app.key
+
+ gera chave publica
+ openssl rsa -in app.key -pubout -out app.pub
+
+
+ link para resolver questao do conversao
+ https://superuser.com/questions/606215/openssl-pkcs8-default-format-gives-rsa-private-key
